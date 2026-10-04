@@ -99,17 +99,21 @@ nav a img{
 .container-caixas{
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    gap: 35px;
 }
 
 .caixa {
     display: flex;
+    flex-direction: column;
     background-color: #FFFFFF;
     border: 1px solid #CBD5E1;
     border-radius: 10px;
     padding: 20px;
     height: 150px;
     width: 450px;
+}
+.caixa p {
+    margin-top: 2px;
 }
 #saldo{
     border: 1px solid #94A3B8;
@@ -125,4 +129,45 @@ nav a img{
     border: 1px solid #FCA5A5;
     background-color: #FEF2F2;
     color: #991B1B;
+}
+
+.container-lower{
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+.caixa2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 20px;
+    height: 250px;
+    width: 650px;
+}
+
+.caixa2 p {
+    margin-top: 2px;
+}
+#ultimastransacoes{
+    background-color:#FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #64748B;
+}
+
+#ultimastransacoes p {
+    color: #1E293B;
+}
+
+#despesasmes{
+    background-color: #FFFBEB;
+    border: 1px solid #FDE68A;
+    color: #78350F;
+}
+
+#despesasmes p{
+    color: #92400E;
 }
