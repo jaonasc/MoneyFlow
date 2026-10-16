@@ -1,4 +1,5 @@
 const saldo = document.querySelector('#saldo')
+const saldovalor = document.querySelector('#saldo h1')
 const entradas = document.querySelector('#entradas')
 const entradasvalor = document.querySelector('#entradas h1')//Variavel utilizada para adicionar valor no h1 do id entradas
 const saidas = document.querySelector('#saidas')
@@ -19,6 +20,12 @@ function adicionar(){
     }
 
     entradasvalor.innerText = sum.toLocaleString('pt-BR',{
+        style: 'currency',
+        currency:'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+    saldovalor.innerText = sum.toLocaleString('pt-BR',{
         style: 'currency',
         currency:'BRL',
         minimumFractionDigits: 2,
