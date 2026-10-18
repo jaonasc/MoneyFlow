@@ -14,8 +14,8 @@
 
         <nav>
             <a href="index.html">Inicio</a>
-            <a href="http://">Adicionar</a>
-            <a href="http://">Transações</a>
+            <a href="#" onclick="adicionar()";return false>Adicionar</a>
+            <a href="#" onclick="openmodal()">Transações</a>
             <a href="form.html">Fale Conosco</a>
         </nav>
     </header>
@@ -50,6 +50,23 @@
             </div>
         </div>
     </main>
+<dialog>
+    <h1>Adicionar Transação</h1>
+    <form>
+        <label for="">Valor:</label>
+        <input type="number" name="" id="valortransacao">
+
+        <label for="">Categoria:</label>
+        <select name="" id="categorias">
+        <option value="alimentacao">Alimentação</option>
+        <option value="transporte">Transporte</option>
+        <option value="lazer">Lazer</option>
+        <option value="Faculdade">Faculdade</option>
+        </select>
+        <button onclick="transacoes()">Adicionar</button>
+    </form>
+</dialog>
+    <script src="script.js"></script>
 </body>
 </html>
 
