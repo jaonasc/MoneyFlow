@@ -42,21 +42,11 @@ function adicionar(){
     // Chama a função que soma todas as entradas.
     // O resultado retornado é formatado como moeda brasileira.
     // innerText exibe o resultado dentro do h1 do card.
-    entradasvalor.innerText = calcularEntradas().toLocaleString('pt-BR',{
-        style: 'currency',
-        currency:'BRL',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    entradasvalor.innerText = formatarMoeda(calcularEntradas())
 
     // Recalcula e atualiza o saldo depois de adicionar uma entrada.
     // O saldo é calculado usando o total de entradas menos o de saídas.
-    saldovalor.innerText = calcularSaldo().toLocaleString('pt-BR',{
-        style: 'currency',
-        currency:'BRL',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    saldovalor.innerText = formatarMoeda(calcularSaldo())
 }
 
 
@@ -85,20 +75,10 @@ function transacoes(){
 
     // Calcula o total de todas as saídas registradas
     // e atualiza o valor exibido no card Saídas.
-    saldosaidas.innerText = calcularSaidas().toLocaleString('pt-BR',{
-        style: 'currency',
-        currency:'BRL',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    saldosaidas.innerText = formatarMoeda(calcularSaidas())
 
     // Recalcula o saldo depois de registrar uma despesa.
-    saldovalor.innerText = calcularSaldo().toLocaleString('pt-BR',{
-        style: 'currency',
-        currency:'BRL',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    saldovalor.innerText = formatarMoeda(calcularSaldo())
 
     // Fecha o modal depois de registrar a saída.
     modal.close()
@@ -149,4 +129,13 @@ function calcularSaldo(){
     // Subtrai o total gasto do total recebido/guardado.
     // O return devolve o resultado dessa conta.
     return calcularEntradas() - calcularSaidas()
+}
+
+function formatarMoeda(valor){
+    return valor.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    })
 }
