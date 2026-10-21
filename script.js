@@ -10,8 +10,11 @@ const saidas = document.querySelector('#saidas')
 const saldosaidas = document.querySelector('#saidas h1')
 // Seleciona o h1 do card Saídas, onde o total gasto será exibido.
 
-const modal = document.querySelector("dialog")
+const modaltransacoes = document.querySelector('#modaltransacoes')
+const modaladicionar = document.querySelector('#modaladicionar')
+
 const valortransacao = document.querySelector('#valortransacao')
+const valoradicionar = document.querySelector('#valoradicionar')
 const categorias = document.querySelector('#categorias')
 // Seleciona os elementos do modal de transações.
 // A variável categorias ainda pode ser utilizada para registrar a categoria da despesa.
@@ -22,10 +25,16 @@ const valorentradas = []
 const valorsaidas = []
 
 
+
+function openmodaladicionar(){
+
+    modaladicionar.showModal()
+}
+
 // FUNÇÃO PARA ADICIONAR VALORES AO CARD ENTRADAS
 function adicionar(){
     // Solicita ao usuário o valor que deseja guardar.
-    let num = Number(window.prompt('Digite o valor que deseja guardar'))
+    let num = Number(valoradicionar.value)
 
     // Verifica se o valor é inválido, zero ou negativo.
     if(!Number.isFinite(num) || num == 0 || num < 0){
@@ -47,13 +56,15 @@ function adicionar(){
     // Recalcula e atualiza o saldo depois de adicionar uma entrada.
     // O saldo é calculado usando o total de entradas menos o de saídas.
     saldovalor.innerText = formatarMoeda(calcularSaldo())
+
+    modaladicionar.close()
 }
 
 
 // FUNÇÃO PARA ABRIR O MODAL
-function openmodal(){
+function openmodaltransacoes(){
     // showModal() abre a janela de diálogo.
-    modal.showModal()
+    modaltransacoes.showModal()
 }
 
 
@@ -81,7 +92,7 @@ function transacoes(){
     saldovalor.innerText = formatarMoeda(calcularSaldo())
 
     // Fecha o modal depois de registrar a saída.
-    modal.close()
+    modaltransacoes.close()
 }
 
 

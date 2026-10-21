@@ -14,8 +14,8 @@
 
         <nav>
             <a href="index.html">Inicio</a>
-            <a href="#" onclick="adicionar()";return false>Adicionar</a>
-            <a href="#" onclick="openmodal()">Transações</a>
+            <a href="#" onclick="openmodaladicionar()";return false>Adicionar</a>
+            <a href="#" onclick="openmodaltransacoes()">Transações</a>
             <a href="form.html">Fale Conosco</a>
         </nav>
     </header>
@@ -50,7 +50,8 @@
             </div>
         </div>
     </main>
-<dialog>
+
+<dialog id="modaltransacoes">
     <h1>Adicionar Transação</h1>
     <form>
         <label for="">Valor:</label>
@@ -64,6 +65,23 @@
         <option value="Faculdade">Faculdade</option>
         </select>
         <button onclick="transacoes()">Adicionar</button>
+    </form>
+</dialog>
+
+<dialog id="modaladicionar">
+    <h1>Adicionar</h1>
+    <form>
+        <label for="">Valor:</label>
+        <input type="number" name="" id="valoradicionar">
+
+        <label for="">Categoria:</label>
+        <select name="" id="categorias">
+        <option value="alimentacao">Alimentação</option>
+        <option value="transporte">Transporte</option>
+        <option value="lazer">Lazer</option>
+        <option value="Faculdade">Faculdade</option>
+        </select>
+        <button onclick="adicionar()">Adicionar</button>
     </form>
 </dialog>
     <script src="script.js"></script>

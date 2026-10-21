@@ -187,3 +187,24 @@ dialog {
     border-radius: 5px;
     width: 70%;
 }
+
+select {
+    padding: 10px 20px;
+    width: 343px;
+    border: 1px solid #111c2e;
+    border-radius: 13px;
+    margin: auto;
+    background-color: white;
+    color: #1E293B;
+}
+
+button {
+    padding: 10px 20px;
+    width: 343px;
+    border: 1px solid #111c2e;
+    border-radius: 13px;
+    margin: auto;
+    background-color: white;
+    color: #1E293B;
+}
+
