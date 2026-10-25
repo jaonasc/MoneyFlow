@@ -1,4 +1,3 @@
-
 const saldo = document.querySelector('#saldo')
 const saldovalor = document.querySelector('#saldo h1')
 
@@ -15,15 +14,17 @@ const modaladicionar = document.querySelector('#modaladicionar')
 
 const valortransacao = document.querySelector('#valortransacao')
 const valoradicionar = document.querySelector('#valoradicionar')
-const categorias = document.querySelector('#categorias')
+const categoriastra = document.querySelector('#categoriastransacoes')
+const categoriadd = document.querySelector('#categoriasadicionar')
 // Seleciona os elementos do modal de transações.
 // A variável categorias ainda pode ser utilizada para registrar a categoria da despesa.
 
+const listatransacoes = document.querySelector('#listatransacoes')
+const agora = new Date()
 
 // Arrays que armazenam os valores registrados pelo usuário.
 const valorentradas = []
 const valorsaidas = []
-
 
 
 function openmodaladicionar(){
@@ -33,6 +34,12 @@ function openmodaladicionar(){
 
 // FUNÇÃO PARA ADICIONAR VALORES AO CARD ENTRADAS
 function adicionar(){
+
+    const adicionar = {
+        valor: Number(valoradicionar.value),
+        categoria: categoriadd.value,
+        data: new Date()
+    }
     // Solicita ao usuário o valor que deseja guardar.
     let num = Number(valoradicionar.value)
 
@@ -70,6 +77,12 @@ function openmodaltransacoes(){
 
 // FUNÇÃO PARA REGISTRAR UMA SAÍDA
 function transacoes(){
+
+    const despesa = {
+        valor: Number(valortransacao.value),
+        categoria: categoriastra.value,
+        data: new Date()
+    }
     // Pega o valor digitado no campo e converte para número.
     let num = Number(valortransacao.value)
 
@@ -81,7 +94,7 @@ function transacoes(){
         return
     }else{
         // Adiciona a despesa ao array de saídas.
-        valorsaidas.push(num)
+        valorsaidas.push(despesa)
     }
 
     // Calcula o total de todas as saídas registradas
@@ -125,7 +138,7 @@ function calcularSaidas(){
     for(let i = 0; i < valorsaidas.length; i++){
 
         // Soma cada despesa ao total acumulado.
-        totalsaidas += valorsaidas[i]
+        totalsaidas += valorsaidas[i].valor
     }
 
     // Devolve a soma das despesas para outras partes do código.
