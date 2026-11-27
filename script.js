@@ -137,18 +137,20 @@ function mostrarDespesas() {
     listadespesas.innerHTML = ''
 
     let despesas = {}
-
+    // Percorrer todas as despesas do array e pegar valor e categoria
     for (let i = 0; i < valorsaidas.length; i++) {
         let categoria = valorsaidas[i].categoria
         let valor = valorsaidas[i].valor
 
+        //Verifica se a categoria ja existe, se existe soma com o valor que ja ta armazenado
+        // Se nao existir cria uma nova propriedade no objeto e coloca no card
         if (despesas[categoria]) {
             despesas[categoria] += valor
         } else {
             despesas[categoria] = valor
         }
     }
-
+    
     for (let categoria in despesas) {
         let linha = document.createElement('tr')
 
