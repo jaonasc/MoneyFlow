@@ -3,21 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" typehref="" href="imgs/favicon-32x32.png">
     <title>MoneyFlow - Gestão Financeira</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="barra">
-        <img src="imgs/logo.png" alt="logo" srcset="">
-        <h1>Money<span>Flow</span></h1>
+        <nav class="navbar navbar-expand-lg navbar-dark barra">
+            <div class="container-fluid">
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="#" onclick="openmodaladicionar()";return false>Adicionar</a>
-            <a href="#" onclick="openmodaltransacoes()">Transações</a>
-            <a href="form.html">Fale Conosco</a>
+                <!-- Logo e nome -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="imgs/logo.png" alt="MoneyFlow" width="40">
+                    Money<span>Flow</span>
+                </a>
+
+                <!-- Botão para celular -->
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
+                            onclick="openmodaladicionar(); return false"><!-- return false impede o comportamento do link -->
+                                Adicionar
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
+                            onclick="openmodaltransacoes(); return false">
+                                Transações
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="form.html">
+                                Fale Conosco
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </nav>
+
     </header>
 
     <main>
@@ -26,52 +74,65 @@
             <h1>Olá, Usuário!</h1>
         </div>
         <p>Aqui está um resumo das suas finanças</p>
-        <div class="container-caixas">
-            <div id="saldo" class="caixa">
-                <p>Saldo</p>
-                <h1>R$</h1>
-                
+        <div class="row g-3"> <!-- row cria os card para 3 cards -->
+            <div class="col-12 col-md-4"> <!-- col define espaçamento entre as colunas, e em telas media(md) ocupa so 4 -->
+                <div id="saldo" class="card p-3">
+                    <p>Saldo</p>
+                    <h1>R$</h1> 
+                </div>
             </div>
-            <div id="entradas" class="caixa">
-                <p>Entradas</p>
-                <h1>R$</h1>
+            <div class="col-12 col-md-4">
+                <div id="entradas" class="card p-3">
+                    <p>Entradas</p>
+                    <h1>R$</h1>
+                </div>
             </div>
-            <div id="saidas" class="caixa">
-                <p>Saídas</p>
-                <h1>R$</h1>
+            <div class="col-12 col-md-4">
+                <div id="saidas" class="card p-3">
+                    <p>Saídas</p>
+                    <h1>R$</h1>
+                </div>
             </div>
         </div>
-        <div class="container-lower">
-            <div id="ultimastransacoes" class="caixa2">
-                <p>Ultimas Transações</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="transacoes">Categoria</th>
-                            <th class="transacoes">Data</th>
-                            <th class="transacoes">Valor</th>
-                        </tr>
-                    </thead>
+        <div class="row g-3 mt-1">
+            <div class="col-12 col-lg-7">
+                <div id="ultimastransacoes" class="card p-3  h-100">
+                    <p>Ultimas Transações</p>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="transacoes">Categoria</th>
+                                    <th class="transacoes">Data</th>
+                                    <th class="transacoes">Valor</th>
+                                </tr>
+                            </thead>
 
-                    <tbody id="listatransacoes">
+                            <tbody id="listatransacoes">
 
-                    </tbody>
-                </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div id="despesasmes" class="caixa2">
-                <p>Despesas deste mês</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="despesas">Categoria</th>
-                            <th class="despesas">Total</th>
-                        </tr>
-                    </thead>
+            <div class="col-12 col-lg-5">
+                <div id="despesasmes" class="card p-3  h-100">
+                    <p>Despesas deste mês</p>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="despesas">Categoria</th>
+                                    <th class="despesas">Total</th>
+                                </tr>
+                            </thead>
 
-                    <tbody id="listadespesas">
+                            <tbody id="listadespesas">
 
-                    </tbody>
-                </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -110,6 +171,7 @@
     </form>
 </dialog>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
 </body>
 </html>
 

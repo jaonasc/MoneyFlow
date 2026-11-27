@@ -4,30 +4,12 @@ body {
     background-color: #F1F5F9;
     color: #1E293B;
 }
-.barra img{
-    margin-left: -25px;
-}
-.barra {
-    display: flex;
-    background-color:#0F172A;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 25px;
-    width: 100%;
-    height: 50px; 
-}
+
+
 p {
     margin-top: -15px;
 }
-.barra h1 {
-    margin-top: 8px; 
-    margin-left: -25px;
-}
-.barra h1 span {
-    color: #F2C14E;
-}
+
 .saudacao{
     margin-bottom: 15px;
     align-items: center;
@@ -37,22 +19,10 @@ p {
 .saudacao img{
     width: 50px;
 }
-nav a {
-    margin-top: 9px;
-    margin-left: 10px;
-    display: inline-block; 
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-}
 
-nav a:hover {
-    background-color: #334155;
-    border-radius: 8px;
-}
 
 main {
-    margin-top: 80px; 
+    margin-top: 0; 
     padding: 20px;
 }
 /* coloquei margin top e padding para que o conteudo nao fique em baixo da barra de manu */
@@ -72,24 +42,7 @@ form {
     margin-bottom: 50px;
     gap: 12px;
 }
-input {
-    padding: 10px 40px 10px 20px;
-    width: 300px;
-    border: 1px solid #111c2e;
-    border-radius: 13px;
-    margin: auto;
-}
-textarea{
-    width: 600px;
-    height: 300px;
-    margin: auto;
-    border: 1px solid #111c2e;
-    border-radius: 9px;
-}
-label {
-    padding: 0px;
-    text-align: center;
-}
+
 nav a img{
     margin-right: 5px;
     margin-top: -5px;
@@ -131,46 +84,12 @@ nav a img{
     color: #991B1B;
 }
 
-.container-lower{
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
-}
-
-.caixa2{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border: 1px solid #CBD5E1;
-    border-radius: 10px;
-    padding: 20px;
-    height: 250px;
-    width: 650px;
-}
 
 .caixa2 p {
     margin-top: 2px;
 }
-#ultimastransacoes{
-    background-color:#FFFFFF;
-    border: 1px solid #CBD5E1;
-    color: #64748B;
-}
 
-#ultimastransacoes p {
-    color: #1E293B;
-}
 
-#despesasmes{
-    background-color: #FFFBEB;
-    border: 1px solid #FDE68A;
-    color: #78350F;
-}
-
-#despesasmes p{
-    color: #92400E;
-}
 
 dialog h1{
     font-family: Optima, sans-serif;
@@ -208,10 +127,119 @@ button {
     color: #1E293B;
 }
 
-.transacoes{
-    padding-right: 140px;
+
+#ultimastransacoes {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #64748B;
 }
 
-.despesas {
-    padding-right: 250px;
+#ultimastransacoes h5 {
+    color: #1E293B;
+}
+
+#despesasmes {
+    background-color: #FFFBEB;
+    border: 1px solid #FDE68A;
+    color: #78350F;
+}
+
+#despesasmes h5 {
+    color: #92400E;
+}
+
+/* Corrige a margem dos títulos e parágrafos dos cards */
+#ultimastransacoes p,
+#despesasmes p {
+    margin-top: 0;
+}
+
+#ultimastransacoes ,
+#despesasmes{
+    min-height: 300px;
+}
+
+
+.barra {
+    background-color: #0F172A;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 25px;
+}
+
+.barra .navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.barra .navbar-brand span {
+    color: #F2C14E;
+}
+.navbar-brand img{
+    height: 45px;
+    width: auto;
+    max-width: 180px;
+    margin-right: 160px;
+}
+.barra .navbar-brand img {
+    margin-right: 8px;
+}
+
+.barra .nav-link {
+    color: white;
+    padding: 10px 15px;
+}
+
+.barra .nav-link:hover {
+    color: #F2C14E;
+}
+
+.barra .nav-link.active {
+    color: #F2C14E;
+}
+
+
+/* Formulário de contato */
+
+.form-contato {
+    max-width: 750px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 15px;
+}
+
+.form-contato h2 {
+    color: #0F172A;
+}
+
+.form-contato .form-label {
+    color: #334155;
+    font-weight: 600;
+}
+
+.form-contato .form-control {
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.form-contato .form-control:focus {
+    border-color: #F2C14E;
+    box-shadow: 0 0 0 0.2rem rgba(242, 193, 78, 0.20);
+}
+
+.btn-enviar {
+    background-color: #0F172A;
+    color: white;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-enviar:hover {
+    background-color: #334155;
+    color: #F2C14E;
 }

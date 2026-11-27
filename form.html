@@ -6,40 +6,152 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" typehref="" href="imgs/favicon-32x32.png">
     <title>MoneyFlow - Gestão Financeira</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
 </head>
 <body>
     <header class="barra">
-        <img src="imgs/logo.png" alt="logo" srcset="">
-        <h1>Money<span>Flow</span></h1>
+        <nav class="navbar navbar-expand-lg navbar-dark barra">
+            <div class="container-fluid">
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="http://">Adicionar</a>
-            <a href="http://">Transações</a>
-            <a href="http://">Fale Conosco</a>
+                <!-- Logo e nome -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="imgs/logo.png" alt="MoneyFlow" width="40">
+                    Money<span>Flow</span>
+                </a>
+
+                <!-- Botão para celular -->
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
+                            onclick="openmodaladicionar(); return false">
+                                Adicionar
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
+                            onclick="openmodaltransacoes(); return false">
+                                Transações
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="form.html">
+                                Fale Conosco
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </nav>
-
     </header>
 
-    <main>
+    <main class="container py-5">
 
-        <form action="">
-            <h1>Envie sua mensagem</h1>
-            <label for="">Nome</label>
-            <input type="text" name="nome" id="form" placeholder="Digite seu nome" required>
+        <div class="form-contato card shadow-sm mx-auto p-4 p-md-5">
 
-            <label for="">Email</label>
-            <input type="email" name="email" id="form" placeholder="Digite seu email" required>
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Fale Conosco</h2>
+                <p class="text-secondary">
+                    Tem alguma dúvida ou sugestão? Envie uma mensagem!
+                </p>
+            </div>
 
-            <label for="">Assunto</label>
-            <input type="text" name="" id="" placeholder="Assunto">
+            <form action="">
 
-            <label for="">Mensagem</label>
-            <textarea name="" id="" placeholder="Digite sua mensagem"></textarea>
-            
-            <button type="submit">Enviar</button>
+                <!-- Nome e Email -->
+                <div class="row g-3">
 
-        </form>
+                    <div class="col-12 col-md-6">
+                        <label for="nome" class="form-label">
+                            Nome
+                        </label>
+
+                        <input type="text"
+                            class="form-control"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="email" class="form-label">
+                            Email
+                        </label>
+
+                        <input type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu email"
+                            required>
+                    </div>
+
+                    <!-- Assunto -->
+                    <div class="col-12">
+                        <label for="assunto" class="form-label">
+                            Assunto
+                        </label>
+
+                        <input type="text"
+                            class="form-control"
+                            id="assunto"
+                            name="assunto"
+                            placeholder="Qual o motivo do contato?"
+                            required>
+                    </div>
+
+                    <!-- Mensagem -->
+                    <div class="col-12">
+                        <label for="mensagem" class="form-label">
+                            Mensagem
+                        </label>
+
+                        <textarea class="form-control"
+                                id="mensagem"
+                                name="mensagem"
+                                rows="5"
+                                placeholder="Digite sua mensagem..."
+                                required></textarea>
+                    </div>
+
+                    <!-- Botão -->
+                    <div class="col-12">
+                        <button type="submit"
+                                class="btn btn-enviar w-100">
+                            Enviar mensagem
+                        </button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
 </body>
 </html>
